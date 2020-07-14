@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <title>My current day and time</title>
+  </head>
+  <body>
+      <h1>The day and current time is!!!</h1>
+      <script>
+        var today = new Date();
+  var day = today.getDay();
+  var day1 = ["Sunday","Monday","Tuesday","Wednesday"
+  ,"Thursday","Friday","Saturday"];
+  document.write("Today is : " + day1[day] + ".");
+  document.write("<br/>");
+  var hour = today.getHours();
+  var minute = today.getMinutes();
+  var second = today.getSeconds();
+  var ap = (hour >= 12)? " PM ":" AM ";
+  hour = (hour >= 12)? hour - 12: hour;
+  if (hour==0 && ap==' PM ') 
+  { 
+  if (minute==0 && second==0)
+  { 
+  hour=12;
+  ap=' Noon';
+  } 
+  else
+  { 
+  hour=12;
+  ap=' PM';
+  } 
+  } 
+  if (hour==0 && ap==' AM ') 
+  { 
+  if (minute==0 && second==0)
+  { 
+  hour=12;
+  ap=' Midnight';
+  } 
+  else
+  { 
+  hour=12;
+  ap=' AM';
+  } 
+  } 
+document.write("\tCurrent Time is : "+hour + 
+ap + " : " + minute + " : " + second);
+      </script>
+  </body>
+</html>
